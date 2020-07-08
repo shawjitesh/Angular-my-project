@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email">
+        <div class="error-msg" *ngIf="isEmail">*Email is required</div>
+        <div class="greet" [ngSwitch]="email">
+            <div *ngSwitchCase="'jiteshshaw93@gmail.com'">Welcome Jitesh</div>
+            <div *ngSwitchCase="'asmitabiswas1505@gmail.com'">Welcome Asmita</div>
+            <div *ngSwitchDefault>{{"Welcome " + email}}</div>
+        </div>
+        <hr>
+        <div>
+            <p [ngClass]="textStyle">Teachers Available</p>
+            <div *ngIf="addEdit">
+                <label for="name">Name<input type="text" [(ngModel)]="selectedTeacher.name"></label>
+                <label for="subject">Subject<input type="text" [(ngModel)]="selectedTeacher.subject"></label>
+                <label for="experience">No. of years of experience<input type="number" [(ngModel)]="selectedTeacher.experience"></label>
+                <button (click)="saveDetails()">Save</button><br>
+            </div>
+            <div *ngIf="noDetails">
+                <p [ngClass]="textStyle">NO TREACHERS AVAILABLE</p>
+            </div>
+            <div *ngIf="view">
+                <table border="1px solid black">
+                    <tr>
+                        <th colspan="3">Teachers Available</th>
+                    </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Years of experience</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="error-msg" *ngIf="showError"><p>No row selected</p></div>
+            <button (click)="viewTeachers()">View Available Teachers</button>
+            <button (click)="editTeacher()">Edit Teacher Info</button>
+            <button (click)="addTeacher()">Add New Teacher</button>
+            <button (click)="removeTeacher()">Remove Teacher</button>
+        </div>
+    </body>
+</html>

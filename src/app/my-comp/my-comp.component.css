@@ -1,0 +1,20 @@
+.greet {
+    color: brown;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.special {
+    font-style: italic;
+}
+
+.error-msg {
+    color: red;
+}
+
+.active {
+    background-color: rgb(165, 157, 157);
+}

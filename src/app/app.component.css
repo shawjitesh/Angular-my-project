@@ -1,0 +1,15 @@
+.error-msg {
+    color: red;
+}
+
+.greet-msg {
+    color: green;
+}
+
+.text-special {
+    font-style: italic;
+}
+
+.text-strong {
+    font-weight: 300;
+}
